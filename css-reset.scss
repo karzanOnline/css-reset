@@ -1,0 +1,38 @@
+/* 去掉 Chrome 中 可输入元素中自动填充时的黄色背景 */
+
+/*这里因为随着chrome浏览器的不多升级-webkit-autofill变成了一个不可变属性
+  如果输入以上仍然没有效果。那么我就真诚的推荐你把autocomplete给off掉吧。
+  (如果你可以忍受那屎黄色的话...)
+*/
+//css
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+/* 修改 Chrome 中自动填充时的字体颜色(可以和上边的一起使用) */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: red;
+}
+
+/* 去掉 Chrome 中 input[type=number] 的上下小箭头*/
+/* 张鑫旭在博客中写到过使用伪元素修改*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+/*这里介绍一下css3的::selection
+  选择器匹配被用户选取的选取是部分。目前测试color、background可以使用
+*/
+p::selection
+{
+  color:#ff0000;
+}
+
+
+
